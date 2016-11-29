@@ -24,3 +24,8 @@ actually it takes 3 parameter,but one is enough
 1. a reducer
 2. default state
 3. for redux-dev-tools
+
+store has three usually used functions
+1. store.getState function,get current state's value,in this example ,state is a value.but normally is an object
+2. store.dispatch() function take an action object,execute the reducer
+3. store.subscribe(a) add a listener to state,every time state change, execute the a function
