@@ -1,20 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore,compose} from 'redux';
+import counter from './reducers';
 import Counter from './components/Counter'
-import counter from './reducers'
 
-const store = createStore(counter)
-const rootEl = document.getElementById('root')
+const enhancers = compose(
+  window.devToolsExtension?window.devToolsExtension():f=>f
+);
 
-const render = () => ReactDOM.render(
+const store = createStore(counter,0,enhancers);
+
+const rootEl = document.getElementById('root');
+
+const render = ()=>ReactDOM.render(
   <Counter
-    value={store.getState()}
-    onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
-    onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+  value={store.getState()}
+  //错误1，=附近不应该有空格
+  onIncrement={()=>store.dispatch({type:'INCREMENT'})}
+  onDecrement={()=>store.dispatch({type:'DECREMENT'})}
   />,
   rootEl
 )
+render();
 
-render()
-store.subscribe(render)
+//因为要subscribe，所以必须将reactDOM.render赋值给一个数值或者将该函数定义为一个有名函数
+store.subscribe(render);
