@@ -10,6 +10,7 @@ class Addtodo extends React.Component{
       console.log(value)
       this.props.add_todo(value)
     }
+    this.refs.todo.value='';
   }
   render(){
     return (

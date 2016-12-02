@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 class Footer extends React.Component{
   handleChange(){
@@ -9,11 +10,11 @@ class Footer extends React.Component{
       <form>
       show
       {" "}
-      <a href='#' onClick={this.props.set_display.bind(null,'ALL')}>all</a>
+      <Link href='#' to={'/'} onClick={this.props.set_display.bind(null,'ALL')}>all</Link>
       {" "}
-      <a href='#' onClick={this.props.set_display.bind(null,'ACTIVE')}>Active</a>
+      <Link href='#' to={'active'} onClick={this.props.set_display.bind(null,'ACTIVE')}>Active</Link>
       {" "}
-      <a href='#' onClick={this.props.set_display.bind(null,'COMPLETED')}>completed</a>
+      <Link href='#' to={'completed'} onClick={this.props.set_display.bind(null,'COMPLETED')}>completed</Link>
       </form>
     )
   }
