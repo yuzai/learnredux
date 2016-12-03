@@ -1,0 +1,27 @@
+h1{
+  text-align: center;
+}
+.gameboard{
+  height:250px;
+  width:250px;
+  display:inline-block;
+}
+.cell{
+  float:left;
+  height:50px;
+  width:50px;
+  background-color: orange;
+  outline:1px solid black;
+}
+.mice{
+  float:left;
+  height:50px;
+  width:50px;
+  background-color: green;
+  outline:1px solid black;
+  animation:shake 1s linear 0s 1;
+}
+@keyframes shake{
+  from{background-color:orange}
+  to{background-color:green}
+}
