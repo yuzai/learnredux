@@ -7,7 +7,8 @@ function mapStateToProps(state){
   return {
     location:state.location,
     number:state.score,
-    pause:state.pause
+    pause:state.pause,
+    miss:state.miss
   }
 }
 

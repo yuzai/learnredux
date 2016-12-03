@@ -4,7 +4,9 @@ import rootReducer from './reducers/index'
 const defaultstate = {
   location:25,
   pause:false,
-  score:0
+  score:0,
+  miss:0,
+  first:false
 };
 
 const enhancers = compose(

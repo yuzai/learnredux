@@ -10,6 +10,11 @@ export function hit_mice(){
     type:'HIT',
   }
 }
+export function miss_mice(){
+  return {
+    type:'MISS',
+  }
+}
 export function pause(){
   return {
     type:'PAUSE',

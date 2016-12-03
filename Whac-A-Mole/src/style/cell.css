@@ -1,5 +1,8 @@
 h1{
+  font-family:'billabongregular';
   text-align: center;
+  font-size:100px;
+  color:orange;
 }
 .gameboard{
   height:250px;
@@ -11,17 +14,41 @@ h1{
   height:50px;
   width:50px;
   background-color: orange;
-  outline:1px solid black;
+  outline:1px solid green;
 }
 .mice{
   float:left;
   height:50px;
   width:50px;
   background-color: green;
-  outline:1px solid black;
+  outline:1px solid green;
   animation:shake 1s linear 0s 1;
+}
+.miss{
+  float:left;
+  height:50px;
+  width:50px;
+  background-color: orange;
+  outline:1px solid green;
+  animation:shake2 1s linear 0s 1;
 }
 @keyframes shake{
   from{background-color:orange}
   to{background-color:green}
+}
+@keyframes shake2{
+  from{background-color:orange}
+  to{background-color:black}
+}
+
+@font-face {
+    font-family: 'billabongregular';
+    src: url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot');
+    src: url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff') format('woff'),
+         url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf') format('truetype'),
+         url('https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
