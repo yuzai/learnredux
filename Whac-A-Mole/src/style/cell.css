@@ -30,7 +30,15 @@ h1{
   width:50px;
   background-color: orange;
   outline:1px solid green;
-  animation:shake2 1s linear 0s 1;
+  animation:shake2 0.1s linear 0s 1;
+}
+.hit{
+  float:left;
+  height:50px;
+  width:50px;
+  background-color: orange;
+  outline:1px solid green;
+  animation:shake3 0.1s linear 0s 1;
 }
 @keyframes shake{
   from{background-color:orange}
@@ -39,6 +47,10 @@ h1{
 @keyframes shake2{
   from{background-color:orange}
   to{background-color:black}
+}
+@keyframes shake3{
+  from{background-color:green}
+  to{background-color:red}
 }
 
 @font-face {

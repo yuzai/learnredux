@@ -2,14 +2,16 @@ import React from 'react'
 
 export default class Cell extends React.Component{
   handleClick(){
-    console.log(this.refs.cell.className)
    if(this.props.location === this.props.i)
    {
-      this.refs.cell.className='cell'
+      this.refs.cell.className='hit'
       this.props.hit();
+      setTimeout(()=>this.refs.cell.className='cell',500)
    }
    else {
+     this.refs.cell.className='miss'
      this.props.miss();
+     setTimeout(()=>this.refs.cell.className='cell',500)
    }
   }
   render(){
