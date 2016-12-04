@@ -1,8 +1,17 @@
+body{
+  background:skyblue;
+  animation:changecolor 10s linear infinite;
+}
+@keyframes changecolor {
+  0% {background:skyblue}
+  50%{background:lightgreen}
+  100%{background:skyblue}
+}
 h1{
   font-family:'billabongregular';
   text-align: center;
   font-size:100px;
-  color:orange;
+  color:green;
 }
 .gameboard{
   height:250px;
@@ -39,6 +48,22 @@ h1{
   background-color: orange;
   outline:1px solid green;
   animation:shake3 0.1s linear 0s 1;
+}
+
+#info{
+  position:fixed;
+  bottom:50px;
+  left:50px;
+  opacity:1;
+}
+@media screen and (max-width:768px){
+  h1{
+    font-size:50px;
+  }
+  #info{
+    bottom:5px;
+    left:0px;
+  }
 }
 @keyframes shake{
   from{background-color:orange}

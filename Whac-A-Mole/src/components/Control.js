@@ -19,14 +19,25 @@ export default class Control extends React.Component{
     }
     )
   }
+  generate_mice(){
+    let rand = Math.floor(Math.random()*1000)+1000;
+    this.props.start();
+    console.log(rand);
+    s=setTimeout(()=>this.generate_mice(),rand);
+  }
   handleStart(){
     t=setInterval(this.checktime.bind(this),1000);
-    s=setInterval(this.props.start,1000)
+    // s=setInterval(this.props.start,1000);
+    this.generate_mice();
+    this.refs.start.disabled='disabled'
+    this.refs.pause.disabled=''
   }
   handlePause(){
-    clearInterval(s);
+    clearTimeout(s);
     clearInterval(t);
     this.props.end();
+    this.refs.start.disabled=''
+    this.refs.pause.disabled='disabled'
   }
   render(){
     const percentage = (this.props.number/(this.props.miss+this.props.number)).toFixed(3).toString();
@@ -35,8 +46,8 @@ export default class Control extends React.Component{
       <table className='table table-hover'>
         <thead>
           <tr>
-            <td className='active'><button className='btn btn-success' onClick={()=>this.handleStart()}>start</button></td>
-            <td className='active'><button className='btn btn-info' onClick={()=>this.handlePause()}>pause</button></td>
+            <td><button ref='start' className='btn btn-success' onClick={()=>this.handleStart()}>start</button></td>
+            <td><button ref='pause' className='btn btn-info' onClick={()=>this.handlePause()}>pause</button></td>
           </tr>
         </thead>
         <tbody>
@@ -44,7 +55,7 @@ export default class Control extends React.Component{
           <tr><td>误击次数</td><td>{this.props.miss}</td></tr>
           <tr><td>总打击次数</td><td>{this.props.miss+this.props.number}</td></tr>
           <tr><td>命中率</td><td>{(this.props.miss+this.props.number===0)?null:percentage.slice(2,4)+'.'+percentage.slice(4,5)+'%'}</td></tr>
-          <tr><td>用时</td><td>{(this.state.hour===0?'':this.state.hour)+' '+(this.state.minute===0?'':this.state.minute)+' '+this.state.second}</td></tr>
+          <tr><td>用时</td><td>{(this.state.hour===0?'':this.state.hour+':')+(this.state.minute===0?'':this.state.minute+':')+this.state.second}</td></tr>
         </tbody>
       </table>
       </div>
