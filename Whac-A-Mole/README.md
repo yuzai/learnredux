@@ -1,5 +1,5 @@
 ## 简介
-这个游戏是模拟打地鼠，采用react-redux实现的。样式上主要用了bootstrap的样式，然后这个模态框也是采用bootstrap实现的，这里 有待更改，因为bootstrap的Js效果是借助jq实现的。两者都很大，但是效果真的比自己做的特效要好看。
+这个游戏是模拟打地鼠，采用react-redux实现的。样式上主要用了bootstrap的样式，然后这个模态框也是采用bootstrap实现的，这里 有待更改，因为bootstrap的Js效果是借助jq实现的。两者都很大，但是效果真的比自己做的特效要好看。demo is [here](http://blog.xiaoboma.com/whac-a-mole/)
 ## 用到的主要库
 1. react
 2. redux
@@ -13,7 +13,7 @@
 2. 点击绿色区域，会打到地鼠
 3. 按键pause可以暂停游戏
 
-使用方法：
+## 使用方法：
 
 1. git clone
 2. cd Whac-A-Mole
